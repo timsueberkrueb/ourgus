@@ -8,8 +8,9 @@ Unofficial Gymnasium Unterrieden Sindelfingen (GUS) application.
     * [qtdeclarative](http://code.qt.io/cgit/qt/qtdeclarative.git)
     * [qtquickcontrols2](http://code.qt.io/cgit/qt/qtquickcontrols2.git/)
     * [qtwebview](http://code.qt.io/cgit/qt/qtwebview.git)
+
 The following modules and their dependencies are required:
-    * [Fluid](https://github.com/lirios/fluid) from develop branch
+* [Fluid](https://github.com/lirios/fluid) from develop branch
 
 ### Build
 
