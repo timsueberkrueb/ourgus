@@ -32,8 +32,13 @@ DISTFILES += \
 ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android
 
 qnx: target.path = /tmp/$${TARGET}/bin
-else: unix:!android: target.path = /opt/$${TARGET}/bin
+else: unix:!android: target.path = /usr/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+unix:!android: {
+    desktop.path = /usr/share/applications
+    desktop.files += res/OurGUS.desktop
+    INSTALLS += desktop
+}
 
 OTHER_FILES += \
     README.md \

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=OurGUS
+Comment=Unofficial GUS application
+Exec=ourgus %U
+Terminal=false
+Type=Application
+Categories=Qt;
+Keywords=Tool;
+Icon=ourgus
+
