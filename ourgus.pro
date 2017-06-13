@@ -35,6 +35,10 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /usr/bin
 !isEmpty(target.path): INSTALLS += target
 unix:!android: {
+    iconSVG.files = res/ourgus.svg
+    iconSVG.path = /usr/local/share/icons/hicolor/scalable/apps
+    INSTALLS += iconSVG
+
     desktop.path = /usr/share/applications
     desktop.files += res/OurGUS.desktop
     INSTALLS += desktop
