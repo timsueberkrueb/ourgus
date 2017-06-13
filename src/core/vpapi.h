@@ -9,7 +9,7 @@
 
 #include "vpresponse.h"
 
-const char* const BASE_URL = "http://vertretungsplanapi-prod.eu-central-1.elasticbeanstalk.com";
+const char* const BASE_URL = OURGUS_API_BASE_URL;
 
 class VPApi : public QObject
 {

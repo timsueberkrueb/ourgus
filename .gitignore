@@ -45,3 +45,6 @@ target_wrapper.*
 # QtCtreator CMake
 CMakeLists.txt.user*
 
+# VP api server configuration
+vp-api-config.pri
+

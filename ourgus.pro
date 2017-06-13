@@ -39,4 +39,5 @@ OTHER_FILES += \
     README.md \
     LICENSE.*
 
-
+# api server configuration
+include(vp-api-config.pri)
