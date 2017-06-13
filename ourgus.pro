@@ -32,7 +32,7 @@ DISTFILES += \
 ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android
 
 qnx: target.path = /tmp/$${TARGET}/bin
-else: unix:!android: target.path = /usr/$${TARGET}/bin
+else: unix:!android: target.path = /usr/bin
 !isEmpty(target.path): INSTALLS += target
 unix:!android: {
     desktop.path = /usr/share/applications
