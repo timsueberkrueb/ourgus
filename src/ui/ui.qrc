@@ -5,5 +5,8 @@
         <file>PlanPage.qml</file>
         <file>OptionsPage.qml</file>
         <file>AboutPage.qml</file>
+        <file>WebView.qml</file>
+        <file>QtWebView.qml</file>
+        <file>QtWebEngineView.qml</file>
     </qresource>
 </RCC>

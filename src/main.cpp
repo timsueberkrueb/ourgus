@@ -1,7 +1,11 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 #include <QtQuickControls2/QQuickStyle>
-#include <QtWebView>
+#ifdef USE_QTWEBVIEW
+    #include <QtWebView>
+#elif USE_QTWEBENGINE
+    #include <QtWebEngine>
+#endif
 
 #include "core/vpapi.h"
 #include "core/vpapiconfig.h"
@@ -13,13 +17,23 @@
 
 int main(int argc, char *argv[])
 {
+    #ifdef Q_OS_LINUX
+        // Workaround QtWebEngine crashing on Nouveau:
+        // https://bugreports.qt.io/browse/QTBUG-41242
+        qputenv("LIBGL_ALWAYS_SOFTWARE", QByteArray("1"));
+    #endif
+
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 
     QGuiApplication app(argc, argv);
 
     app.setApplicationName("ourgus");
 
-    QtWebView::initialize();
+    #ifdef USE_QTWEBVIEW
+        QtWebView::initialize();
+    #elif USE_QTWEBENGINE
+        QtWebEngine::initialize();
+    #endif
 
     QQuickStyle::setStyle(QStringLiteral("Material"));
 
@@ -33,6 +47,11 @@ int main(int argc, char *argv[])
 
     QQmlApplicationEngine engine;
     engine.addImportPath(QStringLiteral("qrc:/"));
+    #ifdef USE_QTWEBVIEW
+        engine.rootContext()->setContextProperty("WEBVIEW_BACKEND", QVariant("QtWebView"));
+    #elif USE_QTWEBENGINE
+        engine.rootContext()->setContextProperty("WEBVIEW_BACKEND", QVariant("QtWebEngine"));
+    #endif
     engine.load(QUrl(QStringLiteral("qrc:///ui/Main.qml")));
 
     return app.exec();

@@ -2,7 +2,6 @@ import QtQuick 2.0
 import QtQuick.Layouts 1.0
 import QtQuick.Controls 2.0
 import QtQuick.Controls.Material 2.0
-import QtWebView 1.0
 import Fluid.Controls 1.0
 
 Page {
@@ -81,10 +80,6 @@ Page {
     WebView {
         id: webview
         anchors.fill: parent
-
-        readonly property bool loaded: loadProgress === 100
-
-        url: "about:blank"
     }
 }
 

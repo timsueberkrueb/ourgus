@@ -1,6 +1,13 @@
 TEMPLATE = app
 
-QT += qml quick quickcontrols2 webview
+QT += qml quick quickcontrols2
+android: {
+    QT += webview
+    DEFINES += USE_QTWEBVIEW
+} else {
+    QT += webengine
+    DEFINES += USE_QTWEBENGINE
+}
 
 CONFIG += c++11
 
