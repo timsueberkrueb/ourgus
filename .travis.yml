@@ -16,14 +16,6 @@ install:
   - source /opt/qt58/bin/qt58-env.sh
 
 script:
-  - git clone git://code.qt.io/qt/qtwebview.git
-  - cd qtwebview
-  - git checkout v5.8.0
-  - mkdir build && cd build
-  - qmake ..
-  - make
-  - sudo make install
-  - cd ../../
   - git clone -b develop https://github.com/lirios/fluid
   - cd fluid
   - git submodule update --init
