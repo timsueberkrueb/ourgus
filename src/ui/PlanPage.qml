@@ -385,11 +385,18 @@ Page {
         }
     }
 
+    VPApiConfig {
+        id: apiConfig
+    }
+
     VPCache { id: cache }
 
     InfoBar { id: infoBar; duration: 3000 }
 
     Component.onCompleted: {
+        if (apiConfig.load()) {
+            api.baseUrl = apiConfig.baseUrl;
+        }
         var cachedResponse = cache.load();
         if (cachedResponse) {
             load(cachedResponse);

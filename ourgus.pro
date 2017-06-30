@@ -11,6 +11,7 @@ SOURCES += src/main.cpp \
     src/core/vpentriesmodel.cpp \
     src/core/vpentry.cpp \
     src/core/vpresponse.cpp \
+    src/core/vpapiconfig.cpp
 
 HEADERS += \
     src/core/vpapi.h \
@@ -19,6 +20,7 @@ HEADERS += \
     src/core/vpentriesmodel.h \
     src/core/vpentry.h \
     src/core/vpresponse.h \
+    src/core/vpapiconfig.h
 
 RESOURCES += src/ui/ui.qrc
 
@@ -49,4 +51,6 @@ OTHER_FILES += \
     LICENSE.*
 
 # api server configuration
-include(vp-api-config.pri)
+exists(vp-api-config.pri) {
+    include(vp-api-config.pri)
+}

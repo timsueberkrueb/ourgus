@@ -4,6 +4,7 @@
 #include <QtWebView>
 
 #include "core/vpapi.h"
+#include "core/vpapiconfig.h"
 #include "core/vpcache.h"
 #include "core/vpentriesmodel.h"
 #include "core/vpresponse.h"
@@ -23,6 +24,7 @@ int main(int argc, char *argv[])
     QQuickStyle::setStyle(QStringLiteral("Material"));
 
     qmlRegisterType<VPApi>("VP", 0, 1, "VPApi");
+    qmlRegisterType<VPApiConfig>("VP", 0, 1, "VPApiConfig");
     qmlRegisterType<VPCache>("VP", 0, 1, "VPCache");
     qmlRegisterType<VPEntriesModel>("VP", 0, 1, "VPEntriesModel");
     qmlRegisterUncreatableType<VPResponse>("VP", 0, 1, "VPResponse", "Type \"VPResponse\" may not be created directly");
