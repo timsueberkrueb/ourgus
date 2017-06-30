@@ -1,5 +1,11 @@
 ## OurGUS
 
+[![License](https://img.shields.io/badge/license-GPLv3.0-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.html)
+[![GitHub release](https://img.shields.io/github/release/tim-sueberkrueb/ourgus.svg)](https://github.com/tim-sueberkrueb/ourgus/releases)
+[![Build Status](https://travis-ci.org/tim-sueberkrueb/ourgus.svg?branch=develop)](https://travis-ci.org/tim-sueberkrueb/ourgus)
+[![GitHub issues](https://img.shields.io/github/issues/tim-sueberkrueb/ourgus.svg)](https://github.com/tim-sueberkrueb/ourgus/issues)
+[![Maintained](https://img.shields.io/maintenance/yes/2017.svg)](https://github.com/tim-sueberkrueb/ourgus/commits/develop)
+
 Unofficial Gymnasium Unterrieden Sindelfingen (GUS) application.
 
 ### Dependencies
