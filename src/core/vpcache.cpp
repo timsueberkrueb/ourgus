@@ -4,7 +4,7 @@
 
 VPCache::VPCache(QObject *parent)
     : QObject(parent),
-    _cachePath(QStandardPaths::writableLocation(QStandardPaths::AppConfigLocation)),
+    _cachePath(QStandardPaths::writableLocation(QStandardPaths::CacheLocation)),
     _cacheDir(_cachePath)
 {
     if (!_cacheDir.exists()) {
