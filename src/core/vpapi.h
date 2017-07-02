@@ -10,7 +10,6 @@
 #include "vpresponse.h"
 
 // Default server (Vertretungsplan mirror for OurGUS)
-const char* const DEFAULT_HOST = "vp.timsueberkrueb.io";
 const char* const DEFAULT_BASE_URL = "https://vp.timsueberkrueb.io";
 
 #ifdef OURGUS_API_FALLBACK_BASE_URL
@@ -22,7 +21,6 @@ const char* const DEFAULT_BASE_URL = "https://vp.timsueberkrueb.io";
 class VPApi : public QObject
 {
     Q_OBJECT
-    Q_PROPERTY(QString defaultHost READ defaultHost)
     Q_PROPERTY(QUrl defaultBaseUrl READ defaultBaseUrl)
     Q_PROPERTY(QUrl fallbackBaseUrl READ fallbackBaseUrl)
     Q_PROPERTY(QUrl baseUrl READ baseUrl WRITE setBaseUrl NOTIFY baseUrlChanged)
@@ -32,7 +30,6 @@ public:
 
     Q_INVOKABLE bool checkConnection(const QString& endpoint = "connectivity_check");
 
-    QString defaultHost() const { return QString(DEFAULT_HOST); }
     QUrl defaultBaseUrl() const { return QUrl(DEFAULT_BASE_URL); }
     QUrl fallbackBaseUrl() const { return QUrl(FALLBACK_BASE_URL); }
 
