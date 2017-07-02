@@ -1,3 +1,5 @@
+#include <QEventLoop>
+
 #include "vpapi.h"
 
 VPApi::VPApi(QObject *parent)
@@ -5,6 +7,20 @@ VPApi::VPApi(QObject *parent)
     _networkManager(new QNetworkAccessManager)
 {
 
+}
+
+bool VPApi::checkConnection(const QString& endpoint)
+{
+    QNetworkRequest request;
+    QUrl url = QUrl(_baseUrl.toString() + "/" + endpoint);
+    request.setUrl(url);
+    QNetworkReply* reply = _networkManager->get(request);
+    QEventLoop loop;
+    connect(reply, &QNetworkReply::finished, &loop, &QEventLoop::quit);
+    loop.exec();
+    int statusCode = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
+    delete reply;
+    return (statusCode >= 200 && statusCode < 300);
 }
 
 void VPApi::fetch()

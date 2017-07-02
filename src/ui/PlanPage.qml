@@ -385,17 +385,14 @@ Page {
         }
     }
 
-    VPApiConfig {
-        id: apiConfig
-    }
-
     VPCache { id: cache }
 
     InfoBar { id: infoBar; duration: 3000 }
 
     Component.onCompleted: {
-        if (apiConfig.load()) {
-            api.baseUrl = apiConfig.baseUrl;
+        if (!api.checkConnection()) {
+            console.warn("Could not connect to default server, using fallback server instead.");
+            api.baseUrl = api.fallbackBaseUrl;
         }
         var cachedResponse = cache.load();
         if (cachedResponse) {
