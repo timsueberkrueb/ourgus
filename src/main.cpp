@@ -30,6 +30,8 @@ int main(int argc, char *argv[])
     app.setOrganizationName(QStringLiteral("ourgus"));
     app.setOrganizationDomain(QStringLiteral("timsueberkrueb.io"));
 
+    app.setWindowIcon(QIcon(":/res/icons/ourgus.svg"));
+
     #ifdef USE_QTWEBVIEW
         QtWebView::initialize();
     #elif USE_QTWEBENGINE

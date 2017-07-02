@@ -27,7 +27,8 @@ HEADERS += \
     src/core/vpentry.h \
     src/core/vpresponse.h \
 
-RESOURCES += src/ui/ui.qrc
+RESOURCES += src/ui/ui.qrc \
+             res/res.qrc \
 
 DEFINES += QT_DEPRECATED_WARNINGS
 

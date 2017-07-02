@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/res/icons">
+        <file>ourgus.svg</file>
+    </qresource>
+</RCC>
