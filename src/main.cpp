@@ -26,7 +26,9 @@ int main(int argc, char *argv[])
 
     QGuiApplication app(argc, argv);
 
-    app.setApplicationName("ourgus");
+    app.setApplicationName(QStringLiteral("ourgus"));
+    app.setOrganizationName(QStringLiteral("ourgus"));
+    app.setOrganizationDomain(QStringLiteral("timsueberkrueb.io"));
 
     #ifdef USE_QTWEBVIEW
         QtWebView::initialize();
