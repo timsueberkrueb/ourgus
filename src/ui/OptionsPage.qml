@@ -104,6 +104,7 @@ Page {
 
                     property bool loaded: false
 
+                    currentIndex: -1
                     model: [
                         "5",
                         "6",
@@ -125,10 +126,12 @@ Page {
                         }
                     }
                     Component.onCompleted: {
-                        if (form === "11" || form === "12") {
-                            currentIndex = model.indexOf(form);
-                        } else {
-                            currentIndex = model.indexOf(form.slice(0, form.length-1));
+                        if (form !== "") {
+                            if (form === "11" || form === "12") {
+                                currentIndex = model.indexOf(form);
+                            } else {
+                                currentIndex = model.indexOf(form.slice(0, form.length-1));
+                            }
                         }
                         loaded = true;
                     }
@@ -142,14 +145,18 @@ Page {
                     visible: comboFormGrade.currentText !== "11"
                              && comboFormGrade.currentText !== "12"
                     model: ["a", "b", "c", "d"]
+                    currentIndex: -1
+
                     onCurrentTextChanged: {
                         if (loaded) {
                             form = form.slice(0, form.length-1) + currentText;
                         }
                     }
                     Component.onCompleted: {
-                        if (form !== "11" && form !== "12") {
-                            currentIndex = model.indexOf(form[form.length-1]);
+                        if (form !== "") {
+                            if (form !== "11" && form !== "12") {
+                                currentIndex = model.indexOf(form[form.length-1]);
+                            }
                         }
                         loaded = true;
                     }
