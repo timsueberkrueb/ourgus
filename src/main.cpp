@@ -1,6 +1,8 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 #include <QtQuickControls2/QQuickStyle>
+#include <QQmlContext>
+#include <QIcon>
 #ifdef USE_QTWEBVIEW
     #include <QtWebView>
 #elif USE_QTWEBENGINE
