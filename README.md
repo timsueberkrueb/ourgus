@@ -29,6 +29,7 @@ make
 
 ### Credits
 This application accesses [@DominikStiller](https://github.com/DominikStiller)'s [Vertretungsplan](https://github.com/DominikStiller/Vertretungsplan) api.
+The application icon was created by Hendrik Süberkrüb.
 
 ### License
 Licensed under the terms of the GNU General Public License version 3 or, at your option, any later version.

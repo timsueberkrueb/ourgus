@@ -67,6 +67,13 @@ Page {
                 Layout.fillWidth: true
                 wrapMode: Text.WordWrap
                 font.pixelSize: 16
+                text: "Das Anwendungsicon wurde von Hendrik Süberkrüb erstellt, vielen Dank!"
+            }
+
+            Label {
+                Layout.fillWidth: true
+                wrapMode: Text.WordWrap
+                font.pixelSize: 16
                 text: "OurGus ist open-source und steht unter der GPL Lizenz (Version 3). Der Quellcode ist öffentlich auf GitHub einsehbar."
             }
 
