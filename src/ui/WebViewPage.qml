@@ -11,8 +11,13 @@ Page {
     readonly property bool active: StackView.view ? StackView.view.currentItem === page : false
 
     onActiveChanged: {
-        if (active && webview.url !== url) {
-            webview.url = url;
+        if (active) {
+            if (!webview.initialized) {
+                webview.initialize();
+            }
+            if (webview.url !== url) {
+                webview.url = url;
+            }
         }
     }
 
