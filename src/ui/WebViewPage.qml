@@ -22,6 +22,10 @@ Page {
     }
 
     visible: false
+
+    // Hide default app bar
+    appBar.visible: false
+
     header: ToolBar {
         RowLayout {
             anchors {
