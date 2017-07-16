@@ -7,9 +7,9 @@ Item {
 
     property bool initialized: false
     readonly property bool loaded: loadProgress === 100
-    readonly property real loadProgress: __view.loadProgress
-    property url url: __view.url
-    property var __view
+    readonly property real loadProgress: initialized ? __view.loadProgress : 0
+    property url url: initialized ? __view.url : Qt.resolvedUrl()
+    property var __view: QtObject { property url url: "" }
 
     function reload() { __view.reload(); }
     function stop() { __view.stop(); }
@@ -34,6 +34,7 @@ Item {
     }
 
     Connections {
+        enabled: initialized
         target: __view
         onUrlChanged: {
             if (url !== container.url) {
