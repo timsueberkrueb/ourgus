@@ -120,6 +120,11 @@ Page {
                             if (currentText == "11" || currentText == "12") {
                                 form = currentText;
                             } else {
+                                if (comboFormSect.currentIndex == -1) {
+                                    // Select a section as soon
+                                    // as a grade is selected.
+                                    comboFormSect.currentIndex = 0;
+                                }
                                 var formSect = form[form.length-1];
                                 form = currentText + formSect;
                             }
