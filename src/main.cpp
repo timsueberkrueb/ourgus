@@ -50,6 +50,9 @@ int main(int argc, char *argv[])
     qmlRegisterUncreatableType<VPEntry>("VP", 0, 1, "VPEntry", "Type \"VPEntry\" may not be created directly");
 
     QQmlApplicationEngine engine;
+    engine.addImportPath(QCoreApplication::applicationDirPath() + QDir::separator() + QLatin1String("..") +
+                         QDir::separator() + QLatin1String("fluid") + QDir::separator() + QLatin1String("qml"));
+    engine.addImportPath(QCoreApplication::applicationDirPath() + QDir::separator() + QLatin1String("qml"));
     engine.addImportPath(QStringLiteral("qrc:/"));
     #ifdef USE_QTWEBVIEW
         engine.rootContext()->setContextProperty("WEBVIEW_BACKEND", QVariant("QtWebView"));

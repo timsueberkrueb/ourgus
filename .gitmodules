@@ -1,0 +1,4 @@
+[submodule "fluid"]
+	path = fluid
+	url = https://github.com/lirios/fluid
+	branch = master

@@ -9,7 +9,7 @@
 Unofficial Gymnasium Unterrieden Sindelfingen (GUS) application.
 
 ### Dependencies
-* Qt >= 5.8 with at least the following modules is required:
+* Qt >= 5.10 with at least the following modules is required:
     * [qtbase](http://code.qt.io/cgit/qt/qtbase.git)
     * [qtdeclarative](http://code.qt.io/cgit/qt/qtdeclarative.git)
     * [qtquickcontrols2](http://code.qt.io/cgit/qt/qtquickcontrols2.git/)
@@ -17,7 +17,7 @@ Unofficial Gymnasium Unterrieden Sindelfingen (GUS) application.
     * [qtwebengine](http://code.qt.io/cgit/qt/qtwebengine.git) (Desktop) or [qtwebview](http://code.qt.io/cgit/qt/qtwebview.git) (Android)
 
 The following modules and their dependencies are required:
-* [Fluid](https://github.com/lirios/fluid) from develop branch
+* [Fluid](https://github.com/lirios/fluid) == 1.0.0
 
 ### Build
 

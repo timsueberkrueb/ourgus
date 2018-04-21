@@ -19,9 +19,9 @@ Page {
                 rightMargin: Units.smallSpacing
             }
 
-            IconButton {
-                iconColor: "white"
-                iconName: "navigation/arrow_back"
+            ToolButton {
+                icon.color: "white"
+                icon.source: Utils.iconUrl("navigation/arrow_back")
                 onClicked: {
                     page.pop();
                 }

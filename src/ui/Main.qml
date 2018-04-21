@@ -36,7 +36,7 @@ ApplicationWindow {
             drawerActions: [
                 Action {
                     text: "Mensa"
-                    iconName: "maps/restaurant"
+                    icon.source: Utils.iconUrl("maps/restaurant")
                     onTriggered: {
                         source.close();
                         pageStack.push(mensaPage);
@@ -44,7 +44,7 @@ ApplicationWindow {
                 },
                 Action {
                     text: "News"
-                    iconName: "av/new_releases"
+                    icon.source: Utils.iconUrl("av/new_releases")
                     onTriggered: {
                         source.close();
                         pageStack.push(newsPage);
@@ -52,7 +52,7 @@ ApplicationWindow {
                 },
                 Action {
                     text: "Optionen"
-                    iconName: "action/settings"
+                    icon.source: Utils.iconUrl("action/settings")
                     onTriggered: {
                         source.close();
                         pageStack.push(optionsPage);
@@ -60,7 +60,7 @@ ApplicationWindow {
                 },
                 Action {
                     text: "Über"
-                    iconName: "action/info"
+                    icon.source: Utils.iconUrl("action/info")
                     onTriggered: {
                         source.close();
                         pageStack.push(aboutPage);

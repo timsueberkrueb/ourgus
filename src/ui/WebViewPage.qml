@@ -33,9 +33,9 @@ Page {
                 rightMargin: Units.smallSpacing
             }
 
-            IconButton {
-                iconColor: "white"
-                iconName: "navigation/arrow_back"
+            ToolButton {
+                icon.color: "white"
+                icon.source: Utils.iconUrl("navigation/arrow_back")
                 onClicked: {
                     page.pop();
                 }
@@ -52,12 +52,12 @@ Page {
                 implicitHeight: parent.height
                 implicitWidth: 36
 
-                IconButton {
+                ToolButton {
                     id: refreshButton
                     anchors.horizontalCenter: parent.horizontalCenter
                     visible: webview.loaded
-                    iconColor: "white"
-                    iconName: "navigation/refresh"
+                    icon.color: "white"
+                    icon.source: Utils.iconUrl("navigation/refresh")
                     onClicked: {
                         webview.reload();
                     }
@@ -73,9 +73,9 @@ Page {
                 }
             }
 
-            IconButton {
-                iconColor: "white"
-                iconName: "action/open_in_new"
+            ToolButton {
+                icon.color: "white"
+                icon.source: Utils.iconUrl("action/open_in_new")
                 onClicked: {
                     Qt.openUrlExternally(url);
                     webview.stop();

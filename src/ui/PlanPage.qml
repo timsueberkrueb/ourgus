@@ -3,7 +3,6 @@ import QtQuick.Layouts 1.0
 import QtQuick.Controls 2.0
 import QtQuick.Controls.Material 2.0
 import Fluid.Controls 1.0
-import Fluid.Material 1.0
 import Fluid.Core 1.0
 import VP 0.1
 
@@ -48,9 +47,9 @@ Page {
                 rightMargin: Units.smallSpacing
             }
 
-            IconButton {
-                iconColor: "white"
-                iconName: "navigation/menu"
+            ToolButton {
+                icon.color: "white"
+                icon.source: Utils.iconUrl("navigation/menu")
                 onClicked: {
                     navigationDrawer.open();
                 }
@@ -68,12 +67,12 @@ Page {
                 implicitHeight: parent.height
                 implicitWidth: 36
 
-                IconButton {
+                ToolButton {
                     id: refreshButton
                     anchors.horizontalCenter: parent.horizontalCenter
                     visible: !api.loading
-                    iconColor: "white"
-                    iconName: "navigation/refresh"
+                    icon.color: "white"
+                    icon.source: Utils.iconUrl("navigation/refresh")
                     onClicked: {
                         api.fetch();
                     }
@@ -100,7 +99,7 @@ Page {
         }
     }
 
-    NavigationDrawer {
+    NavigationListView {
        id: navigationDrawer
 
        dragMargin: page.visible ? Qt.styleHints.startDragDistance : 0
@@ -203,7 +202,7 @@ Page {
                 visible: planView.model.count === 0
                 width: parent.width
 
-                iconName: "action/check_circle"
+                icon.source: Utils.iconUrl("action/check_circle")
                 text: "Bislang keine Änderungen"
             }
 
@@ -246,7 +245,7 @@ Page {
                         entries: currentDate ? currentDate.entries : []
                     }
                 }
-                delegate: BaseListItem {
+                delegate: ListItem {
                     height: {
                         if (noteLabel.visible && teacherLabel.visible) {
                             return 76;
@@ -348,7 +347,7 @@ Page {
         }
     }
 
-    ActionButton {
+    FloatingActionButton {
         anchors {
             right: parent.right
             bottom: parent.bottom
@@ -356,8 +355,9 @@ Page {
         }
 
         Material.background: Material.accent
+        Material.foreground: "white"
 
-        iconName: filter ? "navigation/cancel" : "content/filter_list"
+        icon.source: filter ? Utils.iconUrl("navigation/cancel") : Utils.iconUrl("content/filter_list")
 
         onClicked: {
             if ((form === "" && userType === student) || (name === "" && userType === teacher)) {
@@ -387,7 +387,7 @@ Page {
 
     VPCache { id: cache }
 
-    InfoBar { id: infoBar; duration: 3000 }
+    SnackBar { id: infoBar; duration: 3000 }
 
     Component.onCompleted: {
         if (!api.checkConnection()) {
