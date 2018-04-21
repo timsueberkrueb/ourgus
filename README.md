@@ -4,7 +4,7 @@
 [![GitHub release](https://img.shields.io/github/release/tim-sueberkrueb/ourgus.svg)](https://github.com/tim-sueberkrueb/ourgus/releases)
 [![Build Status](https://travis-ci.org/tim-sueberkrueb/ourgus.svg?branch=develop)](https://travis-ci.org/tim-sueberkrueb/ourgus)
 [![GitHub issues](https://img.shields.io/github/issues/tim-sueberkrueb/ourgus.svg)](https://github.com/tim-sueberkrueb/ourgus/issues)
-[![Maintained](https://img.shields.io/maintenance/yes/2017.svg)](https://github.com/tim-sueberkrueb/ourgus/commits/develop)
+[![Maintained](https://img.shields.io/maintenance/yes/2018.svg)](https://github.com/tim-sueberkrueb/ourgus/commits/develop)
 
 Unofficial Gymnasium Unterrieden Sindelfingen (GUS) application.
 
