@@ -8,24 +8,14 @@ sudo: require
 dist: trusty
 
 before_install:
-  - sudo add-apt-repository ppa:beineri/opt-qt58-trusty -y
+  - sudo add-apt-repository ppa:beineri/opt-qt-5.10.1-trusty -y
   - sudo apt-get update -qq
     
 install:
-  - sudo apt-get -y install qt58base qt58declarative qt58quickcontrols2 qt58svg qt58webengine qt58graphicaleffects
-  - source /opt/qt58/bin/qt58-env.sh
+  - sudo apt-get -y install qt510base qt510declarative qt510quickcontrols2 qt510svg qt510webengine qt510graphicaleffects
+  - source /opt/qt510/bin/qt510-env.sh
 
 script:
-  - git clone -b develop https://github.com/lirios/fluid
-  - cd fluid
-  - git submodule update --init
-  - ./scripts/fetch_icons.sh
-  - mkdir build
-  - cd build
-  - qmake CONFIG+=install_under_qt ../fluid.pro
-  - make -j4
-  - sudo make install
-  - cd ../../
   - mkdir build
   - cd build
   - qmake ..
