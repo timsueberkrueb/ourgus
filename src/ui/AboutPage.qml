@@ -98,7 +98,7 @@ Page {
             Label {
                 Layout.fillWidth: true
                 wrapMode: Text.WordWrap
-                text: "<b>YourGUS ist eine inoffizielle Anwendung</b> für Schüler des <a href='http://www.gymnasium-unterrieden.de/'>Gymnasium Unterrieden Sindelfingen</a>. "+
+                text: "<b>OurGus ist eine inoffizielle Anwendung</b> für Schüler des <a href='http://www.gymnasium-unterrieden.de/'>Gymnasium Unterrieden Sindelfingen</a>. "+
                       "Diese App wird weder durch das Gymnasium Unterrieden, die Schulleitung oder die Stadt Sindelfingen "+
                       "unterstützt noch wird sie offiziell von genannten Einrichtungen bzw. Personengruppen zur Verfügung gestellt. "
                 onLinkActivated: Qt.openUrlExternally(link)
@@ -125,7 +125,7 @@ Page {
             Label {
                 Layout.fillWidth: true
                 wrapMode: Text.WordWrap
-                text: "<b>YourGus ist freie Software</b> und steht unter der <a href='https://www.gnu.org/licenses/gpl'>GNU General Public License (Version 3)</a> zur Verfügung."
+                text: "<b>OurGus ist freie Software</b> und steht unter der <a href='https://www.gnu.org/licenses/gpl'>GNU General Public License (Version 3)</a> zur Verfügung."
                 onLinkActivated: Qt.openUrlExternally(link)
             }
 
@@ -141,7 +141,7 @@ Page {
             Label {
                 Layout.fillWidth: true
                 wrapMode: Text.WordWrap
-                text: "Copyright © 2017 by Tim Süberkrüb"
+                text: "Copyright © 2018 by Tim Süberkrüb"
             }
         }
     }
