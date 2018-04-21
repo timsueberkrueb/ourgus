@@ -1,5 +1,7 @@
 QT += qml quick quickcontrols2 svg
 
+TARGET = ourgus
+
 android: {
     QT += webview
     DEFINES += USE_QTWEBVIEW
@@ -41,12 +43,12 @@ else: unix:!android: target.path = /usr/bin
 !isEmpty(target.path): INSTALLS += target
 
 unix:!android: {
-    iconSVG.files = res/ourgus.svg
+    iconSVG.files = ../res/ourgus.svg
     iconSVG.path = /usr/local/share/icons/hicolor/scalable/apps
     INSTALLS += iconSVG
 
     desktop.path = /usr/share/applications
-    desktop.files += res/OurGUS.desktop
+    desktop.files += ../res/OurGUS.desktop
     INSTALLS += desktop
 }
 
@@ -68,10 +70,6 @@ macx {
 win32 {
     WINDEPLOYQT_OPTIONS = -qmldir $$OUT_PWD/../fluid/qml/Fluid
 }
-
-OTHER_FILES += \
-    README.md \
-    LICENSE.*
 
 # api server configuration
 exists(vp-api-config.pri) {
